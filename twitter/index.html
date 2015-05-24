@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@*" data-semver="1.4.0-rc.0" src="https://code.angularjs.org/1.4.0-rc.0/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="learnNG">
+   <div ng-controller="mainCtrl as m">
+     {{m.test}}
+   <textarea row="3" cols="40" ng-model="m.tweet" placeholder="140 or less">
+    //ng-model is a variable
+
+   </textarea>
+   <button ng-click="m.addTweet()" ng-disabled="m.invalidTweet()"> go </button>140
+   <input ng-model="name">
+   <span ng-class="{red:m.invalidTweet()}">{{ m.charactersLeft()}}</span>
+  <input placeholder="search tweets" ng-model="searchTest">
+
+  <ul>
+    <li ng-repeat="tweet in m.tweets | filter:searchTest"> {{tweet}} </li>
+  </ul>
+  </div>
+  </body>
+
+</html>
